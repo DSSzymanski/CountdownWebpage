@@ -33,6 +33,39 @@ let getNextHol = (currDate) => {
 	return holidays[i];
 }
 
+let setHidden = (element) => {
+	if(element.style.display != "none") {
+		element.style.display = "none";
+	}
+}
+
+let setViewable = (element) => {
+	if(element.style.display == "none") {
+		element.style.display = "flex";
+	}
+}
+
+let setupTimer = (currDate) => {
+	let nextHol = getNextHol(currDate);
+	document.getElementById('holiday').innerText = nextHol[0];
+	let mSecs = nextHol[1] - currDate;
+		
+	let days = Math.floor(mSecs/toDays);
+	mSecs -= days*toDays;
+	document.getElementById('days').innerText = Math.floor(days);
+
+	let hours = Math.floor(mSecs/toHours);
+	mSecs -= hours*toHours;
+	document.getElementById('hours').innerText = Math.floor(hours);
+		
+	let mins = Math.floor(mSecs/toMins);
+	mSecs -= mins*toMins;
+	document.getElementById('mins').innerText = Math.floor(mins);
+		
+	let secs = Math.floor(mSecs/toSecs);
+	document.getElementById('secs').innerText = Math.floor(secs);
+}
+
 let tracker = () => {
 	let currDate = getCurrDate();
 	let currHoliday = isHoliday(currDate);
@@ -43,27 +76,13 @@ let tracker = () => {
 		holidayDiv.innerText = "Happy " + currHoliday + "!";
 	}
 	else{
-		let nextHol = getNextHol(currDate);
-		document.getElementById('holiday').innerText = nextHol[0];
-		let mSecs = nextHol[1] - currDate;
-		
-		let days = Math.floor(mSecs/toDays);
-		mSecs -= days*toDays;
-		document.getElementById('days').innerText = Math.floor(days);
-
-		let hours = Math.floor(mSecs/toHours);
-		mSecs -= hours*toHours;
-		document.getElementById('hours').innerText = Math.floor(hours);
-		
-		let mins = Math.floor(mSecs/toMins);
-		mSecs -= mins*toMins;
-		document.getElementById('mins').innerText = Math.floor(mins);
-		
-		let secs = Math.floor(mSecs/toSecs);
-		document.getElementById('secs').innerText = Math.floor(secs);
+		setViewable(document.getElementById('holidayBox'));
+		setViewable(document.getElementById('dateDiv'));
+		setupTimer(currDate);
 	}
 }
 
 let startTracker = () => {
+	tracker();
 	setInterval(tracker, 1000);
 }
