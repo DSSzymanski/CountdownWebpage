@@ -1,8 +1,13 @@
+const toSecs = 1000;
+const toMins = toSecs * 60;
+const toHours = toMins * 60;
+const toDays = toHours * 24;
+
 class Timer extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			currDate: Date(Date.now())
+			currDate: new Date(Date.now())
 		};
 	}
 	componentDidMount() {
@@ -26,34 +31,36 @@ class Timer extends React.Component {
 		let values = getTimerValues(this.state.currDate);
 		return(
 			React.createElement('div', {}, 
-				TimerBox({value: values[0], label: 'days'}),
-				TimerBox({value: values[1], label: 'hours'}),
-				TimerBox({value: values[2], label: 'mins'}),
-				TimerBox({value: values[3], label: 'secs'}),
+				TimerBox({value: values['days'], label: 'days'}),
+				TimerBox({value: values['hours'], label: 'hours'}),
+				TimerBox({value: values['mins'], label: 'mins'}),
+				TimerBox({value: values['secs'], label: 'secs'}),
 			)
 		);
 	}
 }
 
 let getTimerValues = (currDate) => {
+	let dateDict = {};
 	let nextHol = getNextHol(currDate);
-	let mSecs = nextHol[1] - currDate;
+	console.log(nextHol);
+	let mSecs = nextHol[1] - currDate; //time in ms until next holiday
 		
-	let days = Math.floor(mSecs/toDays);
-	mSecs -= days*toDays;
+	dateDict['days'] = Math.floor(mSecs/toDays);
+	mSecs -= dateDict['days']*toDays;
 
-	let hours = Math.floor(mSecs/toHours);
-	mSecs -= hours*toHours;
+	dateDict['hours'] = Math.floor(mSecs/toHours);
+	mSecs -= dateDict['hours']*toHours;
 		
-	let mins = Math.floor(mSecs/toMins);
-	mSecs -= mins*toMins;
+	dateDict['mins'] = Math.floor(mSecs/toMins);
+	mSecs -= dateDict['mins']*toMins;
 		
-	let secs = Math.floor(mSecs/toSecs);
+	dateDict['secs'] = Math.floor(mSecs/toSecs);
 
-	return([days, hours, mins, secs]);
+	return(dateDict);
 }
 
 ReactDOM.render(
 	React.createElement(Timer, {}, null),
-	document.getElementById('trackerRow')
+	document.getElementById('holidayTracker')
 );
