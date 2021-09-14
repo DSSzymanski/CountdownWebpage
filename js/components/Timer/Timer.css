@@ -1,7 +1,4 @@
 .timer-container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
 	text-align: center;
 	font-size: 2em;
 	background-color: #0C0032;
@@ -9,9 +6,19 @@
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 10px;
-	border-radius: 4px;
-	padding-right: 5px;
 	padding-left: 5px;
+	padding-right: 5px;
+	border-radius: 4px;
+}
+
+.banner-container {
+	color: white;
+}
+
+.box-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .timer-box {
