@@ -1,0 +1,11 @@
+.timer-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	font-size: 2em;
+}
+
+.timer-box {
+	margin: 20px;
+}
