@@ -20,8 +20,3 @@ let Banner = () => {
 		)
 	);
 }
-
-ReactDOM.render(
-	React.createElement(Banner, {}, null),
-	document.getElementById('banner')
-);
