@@ -1,6 +1,5 @@
 let holidays = [
-	["today", new Date('September 12, 2021 00:00:00'), new Date('September 13, 2021 00:00:00')],
-	["Labor Day", new Date('September 5, 2021 23:00:00'), new Date('September 6, 2021 23:00:00')],
+	["Labor Day", new Date('September 5, 2021 00:00:00'), new Date('September 6, 2021 23:00:00')],
 	["Thanksgiving", new Date('November 25 2021, 00:00:00'), new Date('November 25, 2021 23:59:59')],
 	["Christmas Eve", new Date('December 24, 2021 00:00:00'), new Date('December 24, 2021 23:59:59')],
 	["Christmas", new Date('December 24, 2021 17:00:00'), new Date('December 25, 2021 23:59:59')],
