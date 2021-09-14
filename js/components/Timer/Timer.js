@@ -30,11 +30,11 @@ class Timer extends React.Component {
 	render() {
 		let values = getTimerValues(this.state.currDate);
 		return(
-			React.createElement('div', {}, 
-				TimerBox({value: values['days'], label: 'days'}),
-				TimerBox({value: values['hours'], label: 'hours'}),
-				TimerBox({value: values['mins'], label: 'mins'}),
-				TimerBox({value: values['secs'], label: 'secs'}),
+			React.createElement('div', {className: 'timer-container'}, 
+				TimerBox({value: values['days'], label: 'Days'}),
+				TimerBox({value: values['hours'], label: 'Hours'}),
+				TimerBox({value: values['mins'], label: 'Mins'}),
+				TimerBox({value: values['secs'], label: 'Secs'}),
 			)
 		);
 	}
@@ -43,7 +43,6 @@ class Timer extends React.Component {
 let getTimerValues = (currDate) => {
 	let dateDict = {};
 	let nextHol = getNextHol(currDate);
-	console.log(nextHol);
 	let mSecs = nextHol[1] - currDate; //time in ms until next holiday
 		
 	dateDict['days'] = Math.floor(mSecs/toDays);
@@ -62,5 +61,5 @@ let getTimerValues = (currDate) => {
 
 ReactDOM.render(
 	React.createElement(Timer, {}, null),
-	document.getElementById('holidayTracker')
+	document.getElementById('timer')
 );

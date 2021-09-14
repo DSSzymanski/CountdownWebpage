@@ -3,35 +3,23 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Countdown to Next Holiday</title>
-
-		<!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-
-		<!-- jQuery library -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-		<!-- Latest compiled JavaScript -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 		
 		<!-- React CDN -->
 		<script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
 		<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
 
 		<link rel="stylesheet" href="../css/Countdown.css">
+		<link rel="stylesheet" href="../js/components/Timer/Timer.css">
 		<script src="../js/components/Timer/TimerBox.js"></script>
 		<script src="../js/holidates.js"></script>
 	</head>
 
 	<body>
-		<div id="trackerRow">
-			<div id="holidayTracker">
-				<div class="row" style="display: flex;">
-					<div id="holidayBox">
-						<div style="margin-right: 10px;">Next Holiday:</div>
-						<div id="holiday"></div>
-					</div>
-				</div>
-				<script src="../js/components/Timer/Timer.js"></script>
+		<div id="App">
+			<div id='background'></div>
+			<div id='banner'></div>
+			<div id="timer">
+				<script src="../js/components/Timer/Timer.js"></script>				
 			</div>
 		</div>
 	</body>

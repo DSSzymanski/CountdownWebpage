@@ -21,7 +21,6 @@ let isHoliday = (currDate) => {
 
 let getNextHol = (currDate) => {
 	let i = 0;
-	console.log(isHoliday(currDate));
 	let whichDate = isHoliday(currDate) ? 2 : 1;
 	while(currDate - holidays[i][whichDate] > 0) {
 		i++;
