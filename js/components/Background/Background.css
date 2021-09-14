@@ -4,7 +4,10 @@
 }
 
 img {
-	height: 80vh;
+	max-width: 80vw;
+	max-height: 80vh;
+	height: auto;
+	width: auto;
 }
 
 .image-credits {
