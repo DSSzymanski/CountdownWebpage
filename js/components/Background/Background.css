@@ -1,0 +1,12 @@
+.image-container {
+	display: flex;
+	justify-content: center;
+}
+
+img {
+	height: 80vh;
+}
+
+.image-credits {
+	display: none;
+}
