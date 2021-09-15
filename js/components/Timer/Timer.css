@@ -1,11 +1,41 @@
 .timer-container {
+	text-align: center;
+	font-size: 2em;
+	background-color: #0C0032;
+	width: fit-content;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 5px;
+	border-radius: 4px;
+}
+
+.banner-container {
+	color: white;
+}
+
+.box-container {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	text-align: center;
-	font-size: 2em;
 }
 
 .timer-box {
-	margin: 20px;
+	margin: 10px;
+	background-color: #3500D3;
+	color: white;
+	padding: 10px;
+	border-radius: 4px;
+}
+
+@media screen and (max-width: 960px) {
+	.timer-container {
+		font-size: 1em;
+	}
+
+	.timer-box {
+		font-size: 1em;
+	}
 }

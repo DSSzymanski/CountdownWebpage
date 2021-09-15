@@ -1,0 +1,15 @@
+.image-container {
+	display: flex;
+	justify-content: center;
+}
+
+img {
+	max-width: 80vw;
+	max-height: 80vh;
+	height: auto;
+	width: auto;
+}
+
+.image-credits {
+	display: none;
+}

@@ -30,11 +30,14 @@ class Timer extends React.Component {
 	render() {
 		let values = getTimerValues(this.state.currDate);
 		return(
-			React.createElement('div', {className: 'timer-container'}, 
-				TimerBox({value: values['days'], label: 'Days'}),
-				TimerBox({value: values['hours'], label: 'Hours'}),
-				TimerBox({value: values['mins'], label: 'Mins'}),
-				TimerBox({value: values['secs'], label: 'Secs'}),
+			React.createElement('div', {className: 'timer-container'},
+				Banner(),
+				React.createElement('div', {className: 'box-container'},
+					TimerBox({value: values['days'], label: 'Days'}),
+					TimerBox({value: values['hours'], label: 'Hours'}),
+					TimerBox({value: values['mins'], label: 'Mins'}),
+					TimerBox({value: values['secs'], label: 'Secs'}),
+				)
 			)
 		);
 	}
