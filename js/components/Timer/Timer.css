@@ -2,6 +2,7 @@
 	text-align: center;
 	font-size: 2em;
 	background-color: #0C0032;
+	width: -moz-fit-content;
 	width: fit-content;
 	margin-left: auto;
 	margin-right: auto;
