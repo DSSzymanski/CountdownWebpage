@@ -4,21 +4,22 @@
  * with the holiday name and whether the timer represents the time until the
  * holiday starts or time until the holiday ends if it currently is a holiday.
  * 
+ * @param		{boolean}		props.status: Status of if it's currently a holiday.
+ * @param		{string}		props.hol_string: String containing the name of the
+ * 											current/next holiday.
+ * 
  * @returns 	{component} 	returns React component to be used as the 
  * 								heading.
  */
-let Banner = () => {
-	let date = new Date(Date.now());
-	let status = isHoliday(date);
-	let holString = getNextHol(date)[0];
+let Banner = (props) => {
 	let bannerString;
 
 	//Insert merry if it currently is Christmas or Christmas Eve
-	if(status == true && (holString == "Christmas" || holString == "Christmas Eve")) {
+	if(props.status == true && (props.holString == "Christmas" || props.holString == "Christmas Eve")) {
 		bannerString = 'Merry ';
 	}
 	//Insert Happy if it is currently a holiday not Xmas related
-	else if(status == true) {
+	else if(props.status == true) {
 		bannerString = 'Happy ';
 	}
 	//Basic if the timer is representing a holiday coming up
@@ -28,7 +29,7 @@ let Banner = () => {
 
 	return (
 		React.createElement('div', {className:'banner-container'},
-			bannerString + holString
+			bannerString + props.hol_string
 		)
 	);
 }
